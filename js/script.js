@@ -65,10 +65,8 @@ document.addEventListener("DOMContentLoaded", function() {
   const additionalProjects = document.querySelectorAll('.additional-projects');
 
   // Ocultar proyectos adicionales al cargar la página
-  additionalProjects.forEach(function(project, index) {
-    if (index >= 6) {
-      project.style.display = 'none';
-    }
+  additionalProjects.forEach(function(project) {
+    project.style.display = 'none';
   });
 
   // Mostrar el botón "Ver más" y ocultar el botón "Ver menos" al cargar la página
@@ -86,19 +84,13 @@ document.addEventListener("DOMContentLoaded", function() {
 
   btnVerMenos.addEventListener('click', function(e) {
     e.preventDefault();
-    console.log("Haciendo clic en Ver menos...");
-    document.querySelectorAll('.additional-projects').forEach(function(project, index) {
-      if (index >= 6) {
-        project.style.display = 'none';
-      }
+    additionalProjects.forEach(function(project) {
+      project.style.display = 'none';
     });
     btnVerMas.style.display = 'inline-block';
     btnVerMenos.style.display = 'none';
   });
-  
 });
-
-
 
 
 
